@@ -1,0 +1,30 @@
+---
+- name: Deploy Web Server
+  hosts: VM1:VM2
+  become: yes
+  vars:
+    slave_num: "{{ '1' if 'VM1' in group_names else '2' }}"
+  tasks:
+    - name: Install Apache
+      yum:
+        name: httpd
+        state: present
+
+    - name: Create a html file
+      copy:
+        content: |
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Hello World from SJSU-{{ slave_num }}</title>
+          </head>
+          <body>
+              <h1>Hello World from SJSU-{{ slave_num }}</h1>
+          </body>
+          </html> 
+        dest: /var/www/html/index.html
+
+    - name: Start Apache service
+      service:
+        name: httpd
+        state: started

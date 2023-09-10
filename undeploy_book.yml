@@ -1,0 +1,14 @@
+---
+- name: Undeploy Web Servers
+  hosts: VM1:VM2
+  become: yes
+  tasks:
+    - name: Stop Apache service
+      service:
+        name: httpd
+        state: stopped
+
+    - name: Remove index.html file
+      file:
+        path: /var/www/html/index.html
+        state: absent
