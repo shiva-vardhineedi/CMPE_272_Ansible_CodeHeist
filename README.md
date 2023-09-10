@@ -12,6 +12,8 @@ Also has task to create HTML file on vm1, vm2.
 ansible playbook to undeploy apache servers in vm1, vm2. 
 Also has task to delete HTML file on vm1, vm2.
 
+## ansible.cfg
+Default config file created during ansible installing
 
 
 
