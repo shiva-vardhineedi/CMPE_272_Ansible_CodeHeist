@@ -15,6 +15,16 @@ Also has task to delete HTML file on vm1, vm2.
 ## ansible.cfg
 Default config file created during ansible installing
 
+## CMPE_272_Ansible_CodeHeist_Docu.pdf
+Step by step guide to 
+1. install ansible
+2. create ssh key
+3. add ssh key to slaves
+4. ssh into the slaves from master ec2 instance
+5. ansible install and ping slaves from master
+6. ansible deploy servers on slaves from master using ansible playbook and verify the same on webpage created
+7. ansible undeploy servers on slaves
+
 
 
 
